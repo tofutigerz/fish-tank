@@ -1,7 +1,8 @@
 class Plant extends Fish {
   constructor(options) {
     super(options);
-    this.imageUri = "/images/newPlant.png"
+    this.imageUri = "/images/newPlant.png";
+    this.accel = -0.1;
   }
   makeNewVelocity(minMag) {
     this.swimVelocity = this.generateSwimVelocity(this.maxSwimSpeed, minMag || 0);
@@ -13,7 +14,7 @@ class Plant extends Fish {
     this.position.addMut(delta);
     if (this.position.y > 20) {
       this.timeUntilSpeedChange -= PHYSICS_TICK_SIZE_S;
-      this.swimVelocity.y -= 0.1;
+      this.swimVelocity.y += this.accel;
       if (this.timeUntilSpeedChange < 0) {
         this.makeNewVelocity();
       }
@@ -37,5 +38,9 @@ class Plant extends Fish {
       newSpeed = new Vector(randRangeInt(-max, max), this.swimVelocity.y);
     }
     return newSpeed;
+  }
+  onClick(event) {
+    this.swimVelocity.y = 1000;
+    this.accel = -175;
   }
 }
