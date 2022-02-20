@@ -20,5 +20,11 @@ class Starter extends Denizen {
       type: this.tank.getRandomSpecies(),
     });
     // console.log(this.tank.denizens);
+    this.height *= 1.3;
+    this.width *= 1.3;
+    setTimeout(() => {
+      this.height /= 1.3;
+      this.width /= 1.3;
+    }, 200);
   }
 }
