@@ -12,14 +12,14 @@ class BiteFish extends Fish {
     }
     for (let den in this.tank.denizens){
       let type = this.tank.denizens[den].constructor.name;
-      if (type === "BiteFish") {
+      if (type !== "BiteFish" && type !== "Plant" && type !== "Starter") {
         // console.log("bite position", this.tank.denizens[den].position);
         // console.log("my position", this.position);
         let diffX = this.position.x - this.tank.denizens[den].position.x;
         let diffY = this.position.y - this.tank.denizens[den].position.y;
         let diff = Math.sqrt(diffX ** 2 + diffY ** 2);
         if (diff < 50) {
-          this.kill();
+          this.tank.denizens[den].kill();
         }
       }
       // console.log(this.tank.denizens[den);
