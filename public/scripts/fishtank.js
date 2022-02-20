@@ -27,6 +27,7 @@ class Fishtank {
       id = Math.floor(Math.random() * 1000) + '';
     }
     this.denizens[id] = individual;
+    // console.log(this.denizens);
     return id;
   }
 

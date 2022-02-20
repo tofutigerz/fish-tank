@@ -5,6 +5,7 @@ class GoFish extends Fish {
     this.surgeSecondsLeft = 0;
     this.maxSurge = 1.0;
     this.surgMult = 3.0;
+    this.imageUri = '/images/sword.png';
   }
 
   updateOneTick() {
@@ -15,6 +16,7 @@ class GoFish extends Fish {
       this.makeNewVelocity();
     }
     this.surgeSecondsLeft = Math.max(0, this.surgeSecondsLeft - PHYSICS_TICK_SIZE_S);
+
   }
 
 

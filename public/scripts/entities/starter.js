@@ -19,5 +19,6 @@ class Starter extends Denizen {
       velocity: new Vector(xVel, yVel),
       type: this.tank.getRandomSpecies(),
     });
+    // console.log(this.tank.denizens);
   }
 }

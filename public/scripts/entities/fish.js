@@ -6,6 +6,13 @@ class Fish extends Denizen {
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = true;
+    // for (let den in this.tank.denizens){
+    //   let type = this.tank.denizens[den].constructor.name;
+    //   console.log(type);
+    //   // console.log(this.tank.denizens[den);
+    // }
+    // // console.log(typeof Object.values(this.tank.denizens));
+
   }
 
   generateSwimVelocity(max, min) {
